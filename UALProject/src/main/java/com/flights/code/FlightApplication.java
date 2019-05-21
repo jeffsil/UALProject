@@ -16,7 +16,7 @@ public class FlightApplication {
 	    BufferedReader reader =  new BufferedReader(new InputStreamReader(System.in)); 
 		FlightController fc = new FlightController();
 	    int x=1;
-	     
+	      
 	    // main command processing loop
 	    while (x==1) {	    	
 	        char searchType;
