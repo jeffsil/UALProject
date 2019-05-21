@@ -20,14 +20,17 @@ import com.google.gson.Gson;
 @RequestMapping(value = "/flights")
 public class FlightController {
 	
-    LinkedList<Flight> flightList = new LinkedList<Flight>();
+	LinkedList<Flight> flightList = new LinkedList<Flight>();
+
+	public FlightController() {
+		JSONParser parser = new JSONParser();
+		loadFlights(parser);
+	}
 	
 	@RequestMapping(method = RequestMethod.GET, params = {"flightNumber", "departure"})
 	public ResponseEntity<LinkedList<Flight>> returnFlightByFlightNumberAndDeparture(@RequestParam String flightNumber, @RequestParam String departure) {
 		System.out.println("ReturnFlightByFlightNumberAndDeparture");
-		JSONParser parser = new JSONParser();
 		LinkedList<Flight> jsonRtn = new LinkedList<Flight>(); 
-		loadFlights(parser);
 
 		for (int i=0; i < flightList.size(); i++ ) {
 			if ( (flightList.get(i).getFlightNumber().equalsIgnoreCase(flightNumber))   &&   (flightList.get(i).getDeparture().equalsIgnoreCase(departure)) ) {
@@ -45,9 +48,7 @@ public class FlightController {
 	public ResponseEntity<LinkedList<Flight>> returnFlightByOriginAndDestinationAndDeparture(@RequestParam String origin, 
 			@RequestParam String destination, @RequestParam String departure) {
 		System.out.println("ReturnFlightByOriginAndDestinationAndDeparture");
-		JSONParser parser = new JSONParser();
 		LinkedList<Flight> jsonRtn = new LinkedList<Flight>(); 
-		loadFlights(parser);
 
 		for (int i=0; i < flightList.size(); i++ ) {
 			if ( (flightList.get(i).getOrigin().equalsIgnoreCase(origin))   && 
@@ -91,5 +92,4 @@ public class FlightController {
 		catch(ParseException e) { e.printStackTrace(); }
 		catch(Exception e) { e.printStackTrace(); }
 	}
-
 }
