@@ -26,7 +26,7 @@ public class FlightApplication {
 	        String destination;
 	        String inString;
 	        
-	        System.out.println("Type 1 and Enter to Search by Flight Number and Date.\n" 
+	        System.out.println("\n\n\n\n\nType 1 and Enter to Search by Flight Number and Date.\n" 
 	        		+"Type 2 and Enter to Search by Origin and Destination and Date.\n"  
 	        		+"Type 3 and Enter to exit.\n");
 	        
@@ -40,7 +40,7 @@ public class FlightApplication {
 				
 				// search by flight number and date
 				if (searchType == '1') {
-					System.out.println("Enter Flight Number");
+					System.out.println("\nEnter Flight Number");
 					flightNum = reader.readLine();
 					System.out.println("Enter Date");
 					date = reader.readLine();		
@@ -49,7 +49,7 @@ public class FlightApplication {
 				
 				// search by origin and destination and date
 				else if (searchType == '2'){
-					System.out.println("Enter Origin");
+					System.out.println("\nEnter Origin");
 					origin = reader.readLine();
 					System.out.println("Enter Destination");
 					destination = reader.readLine();
@@ -64,7 +64,7 @@ public class FlightApplication {
 			}
 			
 			catch (IOException e) {
-				System.out.println("Command not successfully read:  " +e.getMessage());
+				System.out.println("\nCommand not successfully read:  " +e.getMessage());
 				continue;
 			}
 	    }	

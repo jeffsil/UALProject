@@ -29,7 +29,6 @@ public class FlightController {
 	
 	@RequestMapping(method = RequestMethod.GET, params = {"flightNumber", "departure"})
 	public ResponseEntity<LinkedList<Flight>> returnFlightByFlightNumberAndDeparture(@RequestParam String flightNumber, @RequestParam String departure) {
-		System.out.println("ReturnFlightByFlightNumberAndDeparture");
 		LinkedList<Flight> jsonRtn = new LinkedList<Flight>(); 
 
 		for (int i=0; i < flightList.size(); i++ ) {
@@ -40,14 +39,13 @@ public class FlightController {
 			}
 		}
 
-		System.out.println("Flight Not Found");
+		System.out.println("\n\nFlight Not Found");
 		return new ResponseEntity<LinkedList<Flight>>(HttpStatus.NOT_FOUND);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, params = {"origin", "destination", "departure"})
 	public ResponseEntity<LinkedList<Flight>> returnFlightByOriginAndDestinationAndDeparture(@RequestParam String origin, 
 			@RequestParam String destination, @RequestParam String departure) {
-		System.out.println("ReturnFlightByOriginAndDestinationAndDeparture");
 		LinkedList<Flight> jsonRtn = new LinkedList<Flight>(); 
 
 		for (int i=0; i < flightList.size(); i++ ) {
@@ -60,7 +58,7 @@ public class FlightController {
 			}
 		}
 		
-		System.out.println("Flight Not Found");
+		System.out.println("\n\nFlight Not Found");
 		return new ResponseEntity<LinkedList<Flight>>(HttpStatus.NOT_FOUND);
 	}
 
