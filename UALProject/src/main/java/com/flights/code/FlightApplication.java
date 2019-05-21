@@ -25,7 +25,7 @@ public class FlightApplication {
 	        String origin;
 	        String destination;
 	        String inString;
-	        
+	         
 	        System.out.println("\n\n\n\n\nType 1 and Enter to Search by Flight Number and Date.\n" 
 	        		+"Type 2 and Enter to Search by Origin and Destination and Date.\n"  
 	        		+"Type 3 and Enter to exit.\n");

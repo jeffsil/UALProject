@@ -38,7 +38,7 @@ public class FlightController {
 				return new ResponseEntity<LinkedList<Flight>>(jsonRtn, HttpStatus.OK);
 			}
 		}
-
+ 
 		System.out.println("\n\nFlight Not Found");
 		return new ResponseEntity<LinkedList<Flight>>(HttpStatus.NOT_FOUND);
 	}
